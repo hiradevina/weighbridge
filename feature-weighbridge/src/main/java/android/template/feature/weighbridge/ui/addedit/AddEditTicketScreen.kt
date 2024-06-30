@@ -77,7 +77,7 @@ internal fun AddEditTicketScreen(
                     width = Dimension.fillToConstraints
                 },
                 enabled = state.operationType == AddEditTicketType.ADD,
-                readOnly = state.operationType == AddEditTicketType.ADD,
+                readOnly = state.operationType != AddEditTicketType.ADD,
                 label = { Text("Nama Pengemudi") },
                 value = input.driverName,
                 onValueChange = { value -> onEvent(AddEditTicketEvent.EditDriverName(value)) }
@@ -90,7 +90,7 @@ internal fun AddEditTicketScreen(
                     width = Dimension.fillToConstraints
                 },
                 enabled = state.operationType == AddEditTicketType.ADD,
-                readOnly = state.operationType == AddEditTicketType.ADD,
+                readOnly = state.operationType != AddEditTicketType.ADD,
                 label = { Text("No. Polisi") },
                 value = input.licenseNumber,
                 onValueChange = { value -> onEvent(AddEditTicketEvent.EditLicense(value)) })
